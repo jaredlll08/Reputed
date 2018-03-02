@@ -75,15 +75,4 @@ public class CommonEventHandler {
         }
     }
     
-    @SubscribeEvent
-    public void onItemTooltip(ItemTooltipEvent event) {
-        ItemStack stack = event.getItemStack();
-        if(!stack.hasTagCompound() || !stack.getTagCompound().getBoolean("reputed")) {
-            return;
-        }
-        
-        NBTTagCompound tag = stack.getTagCompound();
-        int kills = tag.getInteger("kills");
-        event.getToolTip().add("Kills: " + kills);
-    }
 }
