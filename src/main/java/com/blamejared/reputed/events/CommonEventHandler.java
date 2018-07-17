@@ -23,7 +23,7 @@ public class CommonEventHandler {
         DamageSource source1 = event.getSource();
         Entity source = source1.getTrueSource();
         String type = source1.getDamageType();
-        if(source instanceof EntityLivingBase && type.equalsIgnoreCase("player") || type.equalsIgnoreCase("arrow")) {
+        if(source instanceof EntityLivingBase && type.equalsIgnoreCase("player") || type.equalsIgnoreCase("arrow") && source instanceof EntityLivingBase) {
             EntityLivingBase ent = (EntityLivingBase) source;
             ItemStack stack = ent.getHeldItemMainhand();
             if(event.getEntityLiving().getHealth() - event.getAmount() > 0) {
